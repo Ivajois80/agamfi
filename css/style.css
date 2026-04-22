@@ -1019,6 +1019,13 @@ body.dark .form-success {
   color: #fff;
 }
 
+.footer-logo-icon {
+  height: 1.8em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
 .footer-brand p:last-child {
   font-size: 0.85rem;
 }
