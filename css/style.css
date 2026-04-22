@@ -85,6 +85,7 @@ strong {
    UTILITIES
    ============================================= */
 .container {
+  width: 90%;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -271,18 +272,7 @@ body.dark .header.scrolled {
   height: 44px;
 }
 
-.logo-img-fallback {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1rem;
-}
+
 
 .nav-links {
   display: flex;
