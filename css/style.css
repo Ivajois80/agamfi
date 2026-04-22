@@ -86,6 +86,7 @@ strong {
    ============================================= */
 .container {
   width: 90%;
+  max-width: 90%;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -1164,13 +1165,13 @@ body.dark .form-success {
 /* =============================================
    RESPONSIVE
    ============================================= */
-@media (max-width: 1200px) {
+@media (max-width: 1700px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1185,7 +1186,7 @@ body.dark .form-success {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-links {
     position: fixed;
     inset: 0;

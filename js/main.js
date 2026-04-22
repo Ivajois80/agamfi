@@ -7,16 +7,7 @@ const $$ = sel => document.querySelectorAll(sel);
 // ── Año en el footer ──────────────────────────
 $('currentYear').textContent = new Date().getFullYear();
 
-// ── Logo: fallback si no existe logo.jpeg ─────
-const logoImg = $('logoImg');
-if (logoImg) {
-  logoImg.addEventListener('error', () => {
-    const fb = document.createElement('div');
-    fb.className = 'logo-img-fallback';
-    fb.textContent = 'A';
-    logoImg.replaceWith(fb);
-  });
-}
+
 
 // ── Header scroll ─────────────────────────────
 const header = document.querySelector('.header');
