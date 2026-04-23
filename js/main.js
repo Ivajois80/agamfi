@@ -42,16 +42,25 @@ $$('#navLinks .nav-link').forEach(link => {
 const sections = $$('section[id]');
 const navItems = $$('.nav-link');
 
-const navObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navItems.forEach(l => l.classList.remove('active'));
-      document.querySelector(`.nav-link[href="#${entry.target.id}"]`)?.classList.add('active');
+window.addEventListener('scroll', () => {
+  let currentId = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    // El menú cambia cuando el inicio de la sección llega a 250px del borde superior
+    if (window.scrollY >= sectionTop - 250) {
+      currentId = section.getAttribute('id');
     }
   });
-}, { threshold: 0.35 });
 
-sections.forEach(s => navObserver.observe(s));
+  if (currentId) {
+    navItems.forEach(l => {
+      l.classList.remove('active');
+      if (l.getAttribute('href') === `#${currentId}`) {
+        l.classList.add('active');
+      }
+    });
+  }
+}, { passive: true });
 
 // ── Dark Mode ─────────────────────────────────
 const themeToggle = $('themeToggle');
