@@ -48,7 +48,6 @@ body.dark {
 *::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 html {
@@ -482,8 +481,14 @@ body.dark .nav-link.active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: start;
+  align-items: center;
 }
+
+.about-text-col {
+  align-self: start;
+}
+
+
 
 .about-body {
   display: flex;
@@ -502,7 +507,10 @@ body.dark .nav-link.active {
   padding: 36px;
   position: relative;
   transition: var(--transition);
+  align-self: start;
+  margin-top: 1%;
 }
+
 
 body.dark .objectives-card {
   border-color: #065f46;
