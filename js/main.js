@@ -158,13 +158,31 @@ form?.addEventListener('submit', async e => {
   loader?.classList.remove('hidden');
   btn.disabled = true;
 
-  // Simulación de envío — reemplaza con fetch() o EmailJS
-  await new Promise(r => setTimeout(r, 1600));
-
-  txt?.classList.remove('hidden');
-  loader?.classList.add('hidden');
-  btn.disabled = false;
-  succ?.classList.remove('hidden');
-  form.reset();
-  setTimeout(() => succ?.classList.add('hidden'), 6000);
+  try {
+    const formData = new FormData(form);
+    const response = await fetch('https://formsubmit.co/ajax/ivanalex100008@gmail.com', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      txt?.classList.remove('hidden');
+      loader?.classList.add('hidden');
+      btn.disabled = false;
+      succ?.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => succ?.classList.add('hidden'), 6000);
+    } else {
+      throw new Error('Error en el servidor');
+    }
+  } catch (error) {
+    console.error('Error enviando el formulario:', error);
+    alert('Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo.');
+    txt?.classList.remove('hidden');
+    loader?.classList.add('hidden');
+    btn.disabled = false;
+  }
 });

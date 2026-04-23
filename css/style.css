@@ -90,6 +90,7 @@ strong {
   width: 90%;
   max-width: 90%;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .hidden {
@@ -1218,13 +1219,13 @@ body.dark .form-success {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
