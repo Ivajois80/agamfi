@@ -4,8 +4,7 @@
 const $ = id => document.getElementById(id);
 const $$ = sel => document.querySelectorAll(sel);
 
-// ── Año en el footer ──────────────────────────
-$('currentYear').textContent = new Date().getFullYear();
+
 
 
 
